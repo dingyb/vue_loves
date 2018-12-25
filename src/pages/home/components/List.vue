@@ -10,9 +10,20 @@
         <i class="iconfont more-icon">&#xe61a;</i>
       </div>
     </div>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
+    <list-child></list-child>
   </div>
 </template>
 <script>
+import ListChild from './ListChild.vue'
 export default {
   name: 'HomeList',
   data() {
@@ -34,6 +45,9 @@ export default {
     handleToggle(index, val) {
       this.active = index
     }
+  },
+  components: {
+    ListChild
   }
 }
 </script>
@@ -45,6 +59,7 @@ export default {
       height: .8rem
       line-height: .8rem
       background: white
+      margin-bottom: .1rem
       .today
         float: left
         color: orange

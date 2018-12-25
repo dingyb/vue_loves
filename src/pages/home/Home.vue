@@ -1,10 +1,9 @@
 <template>
-  <div>
+  <div class="home" ref="home">
     <div class="container">
       <home-header></home-header>
       <v-touch 
         @swipeleft="handleToLeft" 
-        class="wrapper"
       >
         <home-icons></home-icons>
         <home-list></home-list>
@@ -16,6 +15,7 @@
 import HomeHeader from './components/Header'
 import HomeIcons from './components/Icons'
 import HomeList from './components/List'
+import BScroll from 'better-scroll'
 export default {
   name: 'Home',
   data() {
@@ -28,6 +28,18 @@ export default {
     handleToLeft() {
       this.$router.push({path: '/life'})
     },
+    handleScroll() {
+      this.$nextTick(()=> {
+        if(!this.scroll) {
+          this.scroll = new BScroll(this.$refs.home)
+        }else {
+          this.scroll.refresh();
+        }
+      })
+    }
+  },
+  mounted() {
+    this.handleScroll()
   },
   components: {
     HomeHeader,
@@ -37,7 +49,9 @@ export default {
 } 
 </script>
 <style lang="stylus" scoped>
+.home
+  height: 92vh
   .container
-    height: 92vh
+    // height: 92vh
     background: #D3D3D3 
 </style>

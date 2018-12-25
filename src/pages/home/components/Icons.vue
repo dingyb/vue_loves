@@ -52,7 +52,7 @@ export default {
   .container
     background: white
     width: 100%
-    height: 40vw
+    height: 35vw
     overflow: hidden
     display: flex
     justify-content: space-between
@@ -60,7 +60,8 @@ export default {
     flex-wrap: wrap
     .item
       width: 25%
-      font-size: .2rem
+      background: white
+      font-size: .24rem
       display: flex
       flex-direction: column  
       align-items: center
@@ -68,6 +69,5 @@ export default {
         display: block
         margin-top: .3rem
       .item-text
-        padding: .3rem 0
-    
+        padding: .3rem 0  
 </style>
