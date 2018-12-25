@@ -1,7 +1,7 @@
 <template>
   <div class="home" ref="home">
     <div class="container">
-      <home-header></home-header>
+      <home-header :homeHeader="homeHeader"></home-header>
       <v-touch 
         @swipeleft="handleToLeft" 
       >
@@ -20,7 +20,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      
+      homeHeader: []
     }
   },
   methods: {
@@ -31,15 +31,32 @@ export default {
     handleScroll() {
       this.$nextTick(()=> {
         if(!this.scroll) {
-          this.scroll = new BScroll(this.$refs.home)
+          this.scroll = new BScroll(this.$refs.home, {
+            click: true,
+            scrollY: true,
+            probeType: 3
+          })
         }else {
           this.scroll.refresh();
         }
+        // touchEnd(手指离开以后触发) 
+        this.scroll.on('touchEnd', (pos) => {
+          if(this.scroll.maxScrollY>pos.y + 10) {
+            console.log('加载更多')
+          }
+        })
+      })
+    },
+    getReqData() {
+      this.$axios.get('/api/home.json').then(res => {
+        const datas = res.data
+        this.homeHeader = datas.swiper
       })
     }
   },
   mounted() {
     this.handleScroll()
+    this.getReqData()
   },
   components: {
     HomeHeader,

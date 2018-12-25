@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="item" v-for="item in list" :key="item.id">
+    <div class="item" @click="handleClick(item.id)" v-for="item in list" :key="item.id">
       <p><i class="iconfont item-icon" v-html="item.icon"></i></p>
       <p class="item-text">{{item.text}}</p>
     </div>
@@ -44,6 +44,13 @@ export default {
         icon: '&#xe61a;',
         text: '更多'
       }]
+    }
+  },
+  methods: {
+    handleClick(id) {
+      if(id == '008') {
+        this.$router.push('/life')
+      }
     }
   }
 }

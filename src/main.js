@@ -13,13 +13,14 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 // 全局引入图标库
 import './assets/style/iconfont/iconfont.css'
-
+import axios from 'axios'
 import VueTouch from 'vue-touch'
 
 fastClick.attach(document.body) // 实例化fastclick
 Vue.use(VueAwesomeSwiper) 
 Vue.use(VueTouch, {name: 'v-touch'})
-
+// 全局注册axios
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

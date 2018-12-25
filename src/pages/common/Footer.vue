@@ -1,21 +1,21 @@
 <template>
   <div class="wrap">
-    <router-link to="/" tag="div" class='item active'>
+    <div @click="switchTo('/')" class='item' :class="{active: '/' === $route.path}"> 
       <i class="iconfont item-icon">&#xe61a;</i>
       <p>首页</p>
-    </router-link>
-    <router-link to="/life" tag="div" class='item'>
+    </div> 
+    <div @click="switchTo('/life')" class='item' :class="{active: '/life' === $route.path}">   
        <i class="iconfont item-icon">&#xe61f;</i>
        <p>生活助手</p>
-    </router-link>
-    <router-link to="/staff" tag="div" class='item'>
+    </div>
+    <div @click="switchTo('/staff')" class='item' :class="{active: '/staff' === $route.path}">
       <i class="iconfont item-icon">&#xe63c;</i>
       <p>员工有话说</p>
-    </router-link>
-    <router-link to="/mine" tag="div" class='item'>
+    </div>
+     <div @click="switchTo('/mine')" class='item' :class="{active: '/mine' === $route.path}"> 
       <i class="iconfont item-icon">&#xe605;</i>
       <p>我的</p>
-    </router-link>
+    </div>
   </div>
 </template>
 <script>
@@ -23,6 +23,11 @@
     name: 'CommonFooter',
     data() {
       return {
+      }
+    },
+    methods: {
+      switchTo(path) {
+        this.$router.replace(path)
       }
     }
   }
@@ -38,14 +43,15 @@
   height: 8vh
   background: #EBEBEB
   .item 
-    padding-top:0.14rem
+    padding-top:0.2rem
     p
-      font-size: 0.22rem
+      font-size: 0.24rem
     .item-icon
       display: block
       font-size: 0.4rem
       padding-bottom: 0.1rem
       text-align: center
   .active 
-    color: red
+    color: #027FFF
+    font-weight: bold
 </style>

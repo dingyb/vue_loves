@@ -72,7 +72,7 @@ export default {
         li
           float: left
           margin: 0 .3rem
-          font-size: .2rem
+          font-size: .23rem
           color: gray
         .active
           color: red
