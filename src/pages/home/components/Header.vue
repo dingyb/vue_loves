@@ -4,18 +4,6 @@
 			<swiper-slide v-for="item in homeHeader" :key="item.id">
 				<img class="wrap-img" :src="item.imgUrl" alt="">
 			</swiper-slide>
-			<!-- <swiper-slide>
-				<img class="wrap-img" src="http://img1.qunarzz.com/piao/fusion/1811/7c/8e5c4ab8ee8b7402.jpg_750x200_dd7a38dd.jpg" alt="">
-			</swiper-slide>
-			<swiper-slide>
-				<img class="wrap-img" src="http://img1.qunarzz.com/piao/fusion/1811/b7/1e9c4ca462741f02.jpg_750x200_842d5261.jpg" alt="">
-			</swiper-slide>
-			<swiper-slide>
-				<img class="wrap-img" src="http://img1.qunarzz.com/piao/fusion/1812/d5/4d86b63fd4c8202.jpg_750x200_146446f4.jpg" alt="">
-			</swiper-slide>
-			<swiper-slide>
-				<img class="wrap-img" src="http://img1.qunarzz.com/piao/fusion/1809/61/44400d6591891202.jpg_750x200_7565a05c.jpg" alt="">
-			</swiper-slide> -->
 			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
 	</div>

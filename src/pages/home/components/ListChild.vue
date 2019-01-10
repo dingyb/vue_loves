@@ -1,14 +1,14 @@
 <template>
-  <div id="listChild">
+  <div id="listChild" @click="handleCLick">
     <div class="main_l">
-      <img class="img" src="@/assets/img/list/1.png" alt="">
+      <img class="img" :src="item.img" alt="">
     </div>
     <div class="main_r">
-      <p class="main_r_title">开心一笑</p>
-      <p class="main_r_ltitle">笑哭,夫妻间也慢慢的都是套路、想买个撒大大撒旦山东省...</p>
+      <p class="main_r_title">{{item.title}}</p>
+      <p class="main_r_ltitle">{{item.content}}</p>
       <p class="main_r_des">
-        <span class="des_title">公告速递</span>
-        <span class="des_date">2018/12/24 上午 10:08:18</span>
+        <span class="des_title">{{item.type}}</span>
+        <span class="des_date">{{item.date}}</span>
       </p>
     </div>
   </div>
@@ -17,11 +17,20 @@
 <script>
 export default {
   name: 'ListChild',
+	props: ['item'],
   data() {
     return {
-
+			
     }
-  }
+  },
+  methods: {
+    handleCLick() {
+      this.$router.push({path: '/listdetail/'+this.item.id})
+    }
+  },
+	created: function() {
+		// console.log(this.item)
+	}
 }
 </script>
 

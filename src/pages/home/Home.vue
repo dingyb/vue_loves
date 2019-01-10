@@ -1,26 +1,31 @@
 <template>
-  <div class="home" ref="home">
-    <div class="container">
-      <home-header :homeHeader="homeHeader"></home-header>
-      <v-touch 
-        @swipeleft="handleToLeft" 
-      >
-        <home-icons></home-icons>
-        <home-list></home-list>
-      </v-touch>
+  <div>
+    <div class="home" ref="home">
+      <div class="container">
+        <home-header :homeHeader="homeHeader"></home-header>
+        <v-touch 
+          @swipeleft="handleToLeft" 
+        >
+          <home-icons></home-icons>
+          <home-list :homeList="homeList"></home-list>
+        </v-touch>
+      </div>
     </div>
+    <common-footer></common-footer>
   </div>
 </template>
 <script>
 import HomeHeader from './components/Header'
 import HomeIcons from './components/Icons'
 import HomeList from './components/List'
+import CommonFooter from '@/pages/common/Footer'
 import BScroll from 'better-scroll'
 export default {
   name: 'Home',
   data() {
     return {
-      homeHeader: []
+      homeHeader: [],
+			homeList: []
     }
   },
   methods: {
@@ -51,6 +56,7 @@ export default {
       this.$axios.get('/api/home.json').then(res => {
         const datas = res.data
         this.homeHeader = datas.swiper
+				this.homeList = datas.list
       })
     }
   },
@@ -61,7 +67,8 @@ export default {
   components: {
     HomeHeader,
     HomeIcons,
-    HomeList
+    HomeList,
+    CommonFooter
   }
 } 
 </script>
@@ -69,6 +76,5 @@ export default {
 .home
   height: 92vh
   .container
-    // height: 92vh
     background: #D3D3D3 
 </style>

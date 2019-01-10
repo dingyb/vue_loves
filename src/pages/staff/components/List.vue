@@ -1,19 +1,31 @@
 <template>
   <div class="container">
     <div class="item">
-      <i class="iconfont item-icon">&#xe605;</i>
+      <!-- <i class="iconfont item-icon">&#xe605;</i> -->
+			<svg class="icon myIconStyle">
+				<use xlink:href="#icon-tousujianyi1"></use>
+			</svg>
       <p class="item-text">投诉</p>
     </div>
     <div class="item">
-      <i class="iconfont item-icon">&#xe605;</i>
+      <!-- <i class="iconfont item-icon">&#xe605;</i> -->
+			<svg class="icon myIconStyle">
+				<use xlink:href="#icon-zixun"></use>
+			</svg>
       <p class="item-text">咨询</p>
     </div>
     <div class="item">
-      <i class="iconfont item-icon">&#xe605;</i>
+      <!-- <i class="iconfont item-icon">&#xe605;</i> -->
+			<svg class="icon myIconStyle">
+				<use xlink:href="#icon-yijianfankui"></use>
+			</svg>
       <p class="item-text">建议</p>
     </div>
     <div class="item">
-      <i class="iconfont item-icon">&#xe605;</i>
+      <!-- <i class="iconfont item-icon">&#xe605;</i> -->
+			<svg class="icon myIconStyle">
+				<use xlink:href="#icon-baoxiu"></use>
+			</svg>
       <p class="item-text">报修</p>
     </div>
   </div>
@@ -60,4 +72,7 @@ export default {
         font-size: 1rem
       .item-text
         padding-top: .3rem
+			.myIconStyle
+				width: 1rem
+				height: 1rem
 </style>

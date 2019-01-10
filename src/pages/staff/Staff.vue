@@ -15,12 +15,14 @@
         <staff-inputs></staff-inputs>
       </div>
     </v-touch>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
 import CommonHeader from 'common/Header.vue'
 import StaffList from './components/List.vue'
+import CommonFooter from '@/pages/common/Footer'
 import StaffInputs from './components/Inputs.vue'
 export default {
   name: 'Staff',
@@ -37,7 +39,8 @@ export default {
   components: {
     CommonHeader,
     StaffList,
-    StaffInputs
+    StaffInputs,
+    CommonFooter
   }
 }
 </script>

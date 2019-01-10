@@ -2,12 +2,17 @@
   <div class="container">
     <fieldset class="fieldset">
       <legend>
-        <i class="iconfont item-icon">&#xe61a;</i>
-        安全生活
+        <!-- <i class="iconfont item-icon">&#xe61a;</i> -->
+				<svg class="icon myIconStyle">
+					<use xlink:href="#icon-tongxunlu"></use>
+				</svg>
+        <span class="fieldset_title">安全生活</span>
       </legend>
       <div class="main">
         <div class="item" v-for="item in list" :key="item.id">
-          <p><i class="iconfont item-icon" v-html="item.icon"></i></p>
+					<svg class="icon myIconStyle">
+						<use :xlink:href="'#'+item.icon"></use>
+					</svg>
           <p class="item-text">{{item.text}}</p>
         </div>
       </div>
@@ -21,7 +26,7 @@ export default {
     return {
       list: [{
         id: '001',
-        icon: '&#xe61a;',
+        icon: 'icon-tongxunlu',
         text: '通讯录'
       }]
     }
@@ -64,4 +69,12 @@ export default {
             margin-top: .3rem
           .item-text
             padding: .3rem 0
+					.myIconStyle
+						width: .4rem
+						height: .4rem
+						margin-top: .22rem
+					.fieldset_title
+						display: inline-block
+						position: relative
+						top: -0.11rem
 </style>

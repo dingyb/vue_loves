@@ -38,12 +38,19 @@
   display: flex
   justify-content: space-around
   z-index: 99
+  life: 0
+  right: 0
   bottom: 0
   width: 100%
   height: 8vh
   background: #EBEBEB
   .item 
-    padding-top:0.2rem
+    display: flex
+    flex: 1
+    text-align: center
+    flex-direction: column
+    align-items: center
+    justify-content: center
     p
       font-size: 0.24rem
     .item-icon

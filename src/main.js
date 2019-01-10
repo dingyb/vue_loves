@@ -6,6 +6,7 @@ import router from './router'
 // 导入初始化css
 import '@/assets/style/border.css' 
 import '@/assets/style/reset.css'
+
 // 引入fastclick 解决300毫秒延迟
 import fastClick from 'fastclick'
 // 全局引入vue-awesome-swiper
@@ -13,6 +14,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 // 全局引入图标库
 import './assets/style/iconfont/iconfont.css'
+import './assets/style/iconfont/iconfont.js'
 import axios from 'axios'
 import VueTouch from 'vue-touch'
 

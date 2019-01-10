@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p class="item-text">我的有话说</p>
-    <i class="iconfont item-icon">&#xe605;</i>
+    <i class="iconfont item-icon">&#xe617;</i>
   </div>
 </template>
 

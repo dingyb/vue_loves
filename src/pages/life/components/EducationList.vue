@@ -2,12 +2,17 @@
   <div class="container">
    <fieldset class="fieldset">
       <legend>
-        <i class="iconfont item-icon">&#xe61a;</i>
-        教育生活
+        <svg class="icon myIconStyle">
+        	<use xlink:href="#icon-tubiaozhizuomoban-"></use>
+        </svg>
+        <span class="fieldset_title">教育生活</span>
       </legend>
       <div class="main">
         <div class="item" v-for="item in list" :key="item.id">
-          <p><i class="iconfont item-icon" v-html="item.icon"></i></p>
+          <!-- <p><i class="iconfont item-icon" v-html="item.icon"></i></p> -->
+					<svg class="icon myIconStyle">
+						<use :xlink:href="'#'+item.icon"></use>
+					</svg>
           <p class="item-text">{{item.text}}</p>
         </div>
       </div>
@@ -21,19 +26,19 @@ export default {
     return {
       list: [{
         id: '001',
-        icon: '&#xe61a;',
+        icon: 'icon-yingyu',
         text: '每日英语'
       },{
         id: '002',
-        icon: '&#xe61a;',
+        icon: 'icon-zixun',
         text: '学分查询'
       },{
         id: '003',
-        icon: '&#xe61a;',
+        icon: 'icon-yejichaxun',
         text: 'SER'
       },{
         id: '004',
-        icon: '&#xe61a;',
+        icon: 'icon-tubiaozhizuomoban-',
         text: '富学宝典'
       }]
     }
@@ -76,4 +81,12 @@ export default {
             margin-top: .3rem
           .item-text
             padding: .3rem 0
+					.myIconStyle
+						width: .4rem
+						height: .4rem
+						margin-top: .22rem
+					.fieldset_title
+						display: inline-block
+						position: relative
+						top: -0.11rem
 </style>

@@ -1,47 +1,50 @@
 <template>
   <div class="container">
     <div class="item" @click="handleClick(item.id)" v-for="item in list" :key="item.id">
-      <p><i class="iconfont item-icon" v-html="item.icon"></i></p>
+			<svg class="icon myIconStyle">
+				<use :xlink:href="'#'+item.icon"></use>
+			</svg>
       <p class="item-text">{{item.text}}</p>
     </div>
   </div>
 </template>
 <script>
+
 export default {
   name: 'HomeIcon',
   data() {
     return {
       list: [{
         id: '001',
-        icon: '&#xe61a;',
+        icon: 'icon-tuandui',
         text: '内部推荐'
       },{
         id: '002',
-        icon: '&#xe61a;',
+        icon: 'icon-jisuanxinzi',
         text: '薪资单'
       },{
         id: '003',
-        icon: '&#xe61a;',
+        icon: 'icon-jisuanxinzi',
         text: '薪资试算'
       },{
         id: '004',
-        icon: '&#xe61a;',
+        icon: 'icon-jiabanshenpi',
         text: '加班信息'
       },{
         id: '005',
-        icon: '&#xe61a;',
+        icon: 'icon-paibanguanli',
         text: '调休信息'
       },{
         id: '006',
-        icon: '&#xe61a;',
+        icon: 'icon-_shuaqia',
         text: '刷卡信息'
       },{
         id: '007',
-        icon: '&#xe61a;',
+        icon: 'icon-qingjia',
         text: '请假信息'
       },{
         id: '008',
-        icon: '&#xe61a;',
+        icon: 'icon-icon-more',
         text: '更多'
       }]
     }
@@ -59,7 +62,6 @@ export default {
   .container
     background: white
     width: 100%
-    height: 35vw
     overflow: hidden
     display: flex
     justify-content: space-between
@@ -72,9 +74,10 @@ export default {
       display: flex
       flex-direction: column  
       align-items: center
-      .item-icon
-        display: block
-        margin-top: .3rem
-      .item-text
-        padding: .3rem 0  
+			.myIconStyle
+				width: 0.4rem
+				height: 0.4rem
+				margin-top: .22rem
+			.item-text
+				margin: .2rem
 </style>

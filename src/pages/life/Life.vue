@@ -20,6 +20,7 @@
         </div>
       </div>
     </v-touch>
+    <common-footer></common-footer>
   </div>
 </template>
 
@@ -30,6 +31,7 @@ import EducationList from './components/EducationList.vue'
 import RecreationList from './components/RecreationList.vue'
 import HealthList from './components/HealthList.vue'
 import SafeList from './components/SafeList.vue'
+import CommonFooter from '@/pages/common/Footer'
 import BScroll from 'better-scroll'
 export default {
   name: 'Life',
@@ -61,7 +63,8 @@ export default {
     EducationList,
     RecreationList,
     HealthList,
-    SafeList
+    SafeList,
+    CommonFooter
   }
 }
 </script>

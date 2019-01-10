@@ -4,11 +4,13 @@
       <MineHeader></MineHeader>
       <MineList></MineList>
     </v-touch>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
 import MineHeader from './components/Header.vue'
+import CommonFooter from '@/pages/common/Footer'
 import MineList from './components/List.vue'
 export default {
   name: 'Mine',
@@ -19,7 +21,8 @@ export default {
   },
   components: {
     MineHeader,
-    MineList
+    MineList,
+    CommonFooter
   }
 }
 </script>
